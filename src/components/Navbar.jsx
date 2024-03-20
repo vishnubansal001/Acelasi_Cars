@@ -22,7 +22,7 @@ function Navbar() {
     </div>
     <nav className='flex flex-row md:hidden py-4 px-8 justify-between items-center w-full '>
         <div className='text-xl font-semibold uppercase font-poppins text-center'>Car&nbsp; <span className=' text-red-700 text-sm'>Dealership</span></div>
-        {!m enu ? <HiMiniBars3CenterLeft onClick={()=>setMenu(!menu)} className='text-3xl text-gray-800'/> : (
+        {!menu ? <HiMiniBars3CenterLeft onClick={()=>setMenu(!menu)} className='text-3xl text-gray-800'/> : (
         <div className='absolute top-0 right-0 py-4 flex flex-col gap-3'>
             <div className='w-full flex flex-row-reverse px-8'>
                 <RxCross2 onClick={()=>setMenu(!menu)} className='text-3xl text-gray-800'/>
