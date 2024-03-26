@@ -37,6 +37,23 @@ class UserService {
     }
     return user;
   }
+
+  async deleteUser(id) {
+    await User.findByIdAndDelete(id);
+  }
+
+  async updateUser({ id, userId, name, email, password }) {
+    const user = await this.#getUserById(userId);
+    if (user.role !== "admin") {
+      throw new Error("Unauthorized");
+    }
+    const updatedUser = await User.findByIdAndUpdate(id, {
+      name,
+      email,
+      password,
+    });
+    return updatedUser;
+  }
 }
 
 export default UserService;
