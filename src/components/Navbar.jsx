@@ -9,7 +9,7 @@ function Navbar() {
     const [menu, setMenu] = useState(false)
   return (
     <>
-    <div className='hidden md:flex flex-row justify-around items-center py-4 px-32 font-semibold'>
+    <div className='hidden md:flex flex-row justify-around items-center py-4 px-32 font-semibold absolute w-full'>
         <div className='flex flex-row items-center justify-center gap-8 w-full text-gray-800'>
             <p>Home</p>
             <p>Home</p>
