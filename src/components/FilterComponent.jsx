@@ -77,7 +77,7 @@ function FilterComponent() {
                             <input type="number" id="minPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
                         </div>
                         <div className="flex flex-col w-full">
-                            <label htmlFor="maxPrice">Minimum Price</label>
+                            <label htmlFor="maxPrice">Maximum Price</label>
                             <input type="number" id="maxPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
                         </div>
                         <div className="flex flex-col w-full">
@@ -89,6 +89,7 @@ function FilterComponent() {
                             <input type="number" id="maxYear" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
                         </div>
                     </div>
+                    
                 </form>
                 <div className="flex flex-row justify-center items-center gap-6 ">
                     <Button variant='default' onClick={()=>{alert("filters applied")}}>Apply Filters</Button>
