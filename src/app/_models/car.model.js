@@ -87,6 +87,10 @@ const carSchema = new mongoose.Schema({
     required: true,
     enum: ["V4", "V6", "V8", "V12", "Other"],
   },
+  engineSize: {
+    type: Number,
+    required: true,
+  },
   transmission: {
     type: String,
     required: true,
