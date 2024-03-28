@@ -4,11 +4,12 @@ import Navbar from "@/components/Navbar";
 import HorizontalDisplayCard from "@/components/HorizontalDisplayCard";
 import FilterComponent from "@/components/FilterComponent";
 import HomeSearch from "@/components/HomeSearch";
+import Brands from "@/components/Brands";
 
 
 export default function Home() {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 font-poppins">
     <Navbar/>
     <div className="flex flex-row gap-4 min-h-screen items-center justify-center">
 
@@ -25,6 +26,7 @@ export default function Home() {
     </div>
     <FilterComponent />
     <HomeSearch />
+    <Brands />
     </div>  
   );
 }
