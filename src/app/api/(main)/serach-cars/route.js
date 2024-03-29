@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { connectToDB } from "@/lib/db";
 import CarService from "@/app/_services/Car.service";
 
-export const GET = async (req) => {
+export const POST = async (req) => {
   try {
-    const carId = req.params.carId;
     await connectToDB();
-    const cars = await new CarService().getCarById(carId);
+    const car = await req.json();
+
+    const cars = await new CarService().searchCars(car);
     return NextResponse.json(cars);
   } catch (error) {
     console.log(error);
