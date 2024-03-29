@@ -6,14 +6,15 @@ import Brands from "@/components/Brands";
 import heroVintage from "../../public/assets/hero_vintage.jpg" 
 import Link from "next/link";
 import { cars } from "@/lib/constants";
-import { CreditCard, CarFront, Component, ChevronRight, Facebook, Instagram, Twitter } from "lucide-react";
+import { CreditCard, CarFront, Component } from "lucide-react";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
   return (
     <>
     <Navbar/>
-    <section className="bg-gray-200 font-poppins min-h-screen flex flex-col justify-center items-center">
+    <section className="bg-gray-200 font-poppins min-h-screen flex flex-col justify-center items-center pt-16 md:pt=0">
       <div className="flex flex-col md:flex-row md:justify-between justify-center md:px-28 px-10 gap-20 lg:w-fit w-full">
         <div className="text-4xl font-bold flex flex-col justify-center items-start gap-3">
           <h1>Best <span className="text-red-600">Dealer</span> For</h1>
@@ -68,43 +69,8 @@ export default function Home() {
             </div>
       </div>
     </section>
-    <section className="flex flex-col md:flex-row items-start justify-between px-10 md:px-28 bg-gray-200 py-10 gap-4 text-sm">
-            <div className="flex flex-col w-2/5 gap-4">
-              <h1 className="text-sm font-semibold font-poppins">Subscribe to our newsletter</h1>
-              <div className="flex flex-row px-1 py-2 border border-gray-500 bg-white border-solid rounded-full w-fit">
-                <input type="email" placeholder="Enter your email" className="rounded-l-md border-none outline-none px-2 h-8 w-60"/>
-                <div className="rounded-full p-2 bg-red-600 flex items-center justify-center h-8 w-8">
-                  <ChevronRight size={10} color="white" />
-                </div>
-              </div>
-              <div className="flex flex-row gap-4">
-                <Facebook color="blue"/>
-                <Instagram color="red"/>
-                <Twitter color="#1DA1F2"/>
-              </div>
-            </div>
-            <div className="flex flex-col w-1/5 gap-4 px-10 text-gray-500">
-              <h1 className="text-sm font-semibold font-poppins text-black">Resources</h1>
-              <p>Blog</p>
-              <p>Guide</p>
-              <p>FAQ</p>
-              <p>Help Center</p>
-             
-            </div>
-            <div className="flex flex-col w-1/5 gap-4 px-10 text-gray-500">
-              <h1 className="text-sm font-semibold font-poppins text-black">Buying & Selling</h1>
-              <p>Buying a car</p>
-              <p>List a car</p>
-              <p>List by City</p>
-            </div>
-            <div className="flex flex-col w-1/5 gap-4 px-10 text-gray-500">
-              <h1 className="text-sm font-semibold font-poppins text-black">About</h1>
-              <p>Company</p>
-              <p>Career</p>
-              <p>Contact</p>
-            </div>
-    </section>
-    <div className="w-full px-10 md:px-28 bg-white text-center text-gray-500 text-sm">&copy; Acelasi Cars 2024</div>
+    <Footer />
+    
     </>
   );
 }
