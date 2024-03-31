@@ -9,6 +9,10 @@ export const POST = async (req) => {
     if (!user || !user.email || !user.password || !user.name) {
       return new NextResponse("Please fill all the fields", { status: 400 });
     }
+    const userExists = await new UserService().getUserByEmail(user.email);
+    if (userExists) {
+      return new NextResponse("User already exists", { status: 400 });
+    }
     const userData = await new UserService().registerUser({
       name: user.name,
       email: user.email,
