@@ -10,12 +10,12 @@ function Navbar() {
     const [menu, setMenu] = useState(false)
   return (
     <>
-    <div className='hidden md:flex flex-row justify-around items-center py-4 px-32 font-semibold absolute w-full'>
+    <div className='hidden md:flex flex-row justify-around items-center py-1 px-32 font-semibold absolute w-full z-[5]'>
         <div className='flex flex-row items-center justify-center gap-8 w-full text-gray-800'>
             <Link href={'/'} className='hover:text-red-600'>Home</Link>
             <a href='#footer' className='hover:text-red-600'>Contact</a>
         </div>
-        <Link href={"/"} className='text-3xl flex items-center justify-center w-full'><Image src={logo} alt="Classic Only Cars" className='rounded-full' height={80} width={80}/></Link>
+        <Link href={"/"} className='text-3xl font-italic font-playfair flex items-center justify-center w-full'><Image src={logo} alt="Classic Only Cars" className='rounded-full' height={80} width={80}/></Link>
         <div className='flex flex-row items-center justify-center gap-8 w-full text-gray-800'>
             <Link href={"/search"} className='hover:text-red-600'>Buy a Car</Link>
             <Link href={"/sell"} className='hover:text-red-600'>Sell Your Car</Link>
