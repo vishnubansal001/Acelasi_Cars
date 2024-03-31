@@ -35,7 +35,7 @@ export default function page({params}) {
   return (
     <div>
         <Navbar />
-        <section className='min-h-screen flex flex-row justify-between md:px-28 px-10 md:pt-28 pb-5 pt-10 w-full relative'>
+        <section className='min-h-screen flex flex-col md:flex-row justify-between md:px-24 px-10 md:pt-28 pb-5 pt-10 w-full relative'>
             <div className='flex flex-col gap-3 md:w-3/5 w-full pb-10'>
                 <Image 
                     src={car.image_link}
@@ -48,7 +48,7 @@ export default function page({params}) {
                 <h1 className='text-2xl font-poppins font-semibold text-gray-800'>{car.title}</h1>
                 <p>{car.description}</p>
                 <h1 className='text-3xl italic font-playfair font-semibold text-green-700 w-full text-center'>$ {formatPrice(parseInt(car.price))}</h1>
-                <div className='flex flex-row justify-between items-center'>
+                <div className='flex flex-col sm:flex-row justify-between items-center'>
                     <div className='flex flex-row items-center justify-center'>{car.transmission==="Automatic"?(<TbAutomaticGearbox size={20} color='red'/>):(<TbManualGearbox size={20} color='red'/>)} : {car.transmission}</div>
                     <div className='flex flex-row items-center justify-center'><Gauge size={20} color='red'/> : {formatDistance(parseInt(car.mileage))} Km</div>
                     <div className='flex flex-row items-center justify-center'><Fuel size={20} color='red'/> : {car.fuel}</div>
