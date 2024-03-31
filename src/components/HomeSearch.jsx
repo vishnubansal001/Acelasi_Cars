@@ -2,6 +2,7 @@
 import { uniqueMakesArray,cars } from "@/lib/constants"
 import { useState } from "react"
 import { Search } from "lucide-react";
+import Link from "next/link";
 
 export default function HomeSearch() {
 
@@ -46,7 +47,7 @@ export default function HomeSearch() {
                         )}
                 </select>
             </div>
-            <div className="rounded-full bg-red-700 h-10 w-10 p-2 flex items-center justify-center"><Search color="white" strokeWidth={1}/></div>
+            <Link href={"/search"} className="rounded-full bg-red-700 h-10 w-10 p-2 flex items-center justify-center"><Search color="white" strokeWidth={1}/></Link>
         </div>
     </div>
   )

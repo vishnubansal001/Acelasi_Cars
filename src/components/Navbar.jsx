@@ -3,6 +3,8 @@ import Link from 'next/link';
 import {useState} from 'react'
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
+import logo from '../../public/assets/logo_2.png'
+import Image from 'next/image';
 
 function Navbar() {
     const [menu, setMenu] = useState(false)
@@ -10,13 +12,13 @@ function Navbar() {
     <>
     <div className='hidden md:flex flex-row justify-around items-center py-4 px-32 font-semibold absolute w-full'>
         <div className='flex flex-row items-center justify-center gap-8 w-full text-gray-800'>
-            <Link href={"/search"}>Buy a Car</Link>
-            <Link href={"/sell"}>Sell Your Car</Link>
+            <Link href={'/'} className='hover:text-red-600'>Home</Link>
+            <a href='#footer' className='hover:text-red-600'>Contact</a>
         </div>
-        <div className='text-3xl font-semibold uppercase font-poppins w-full text-center'>Car&nbsp; <span className='text-xl text-red-700'>Dealership</span></div>
+        <Link href={"/"} className='text-3xl flex items-center justify-center w-full'><Image src={logo} alt="Classic Only Cars" className='rounded-full' height={80} width={80}/></Link>
         <div className='flex flex-row items-center justify-center gap-8 w-full text-gray-800'>
-            <a href='#footer'>Contact</a>
-            <Link href={'/search'}>Search</Link>
+            <Link href={"/search"} className='hover:text-red-600'>Buy a Car</Link>
+            <Link href={"/sell"} className='hover:text-red-600'>Sell Your Car</Link>
         </div>
     </div>
     <nav className='flex flex-row md:hidden py-4 px-8 justify-between items-center w-full '>
@@ -30,9 +32,7 @@ function Navbar() {
             <Link href={"/sell"} className='px-10'>Sell Your Car</Link>
             <a href='#footer' className='px-10'>Contact</a>
             <Link href={'/search'} className='px-10'>Search</Link>
-            
         </div>
-        
         )}
     </nav>
     </>
