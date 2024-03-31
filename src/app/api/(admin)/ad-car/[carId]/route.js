@@ -30,11 +30,12 @@ export const PUT = async (req) => {
   }
 };
 
-export const DELETE = async (req) => {
+export const DELETE = async (req, {params}) => {
   try {
-    const carId = req.params.carId;
+    const carId = params.carId;
     await connectToDB();
     const { userId } = await req.json();
+    console.log(userId, carId);
     if (!userId || !carId) {
       return new NextResponse("Please fill all the fields", { status: 400 });
     }

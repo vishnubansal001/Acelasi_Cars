@@ -12,7 +12,7 @@ import { CreditCard, CarFront, Component } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Home() {
@@ -27,10 +27,16 @@ export default function Home() {
     reset: true, // If the tilt effect has to be reset on exit.
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
   };
+  const [featuredCars, setFeaturedCars] = useState([]);
   useEffect(() => {
-    axios.get("/api/cars/featured").then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .get("/api/cars/featured")
+      .then((res) => {
+        setFeaturedCars(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <>
@@ -81,7 +87,7 @@ export default function Home() {
             <div className="bg-gray-500 w-20 h-[2px] rounded-full"></div>
           </div>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-6 px-10 md:px-28">
-            {cars.slice(0, 4).map((car, index) => (
+            {featuredCars?.map((car, index) => (
               <motion.div
                 initial={{ opacity: 0, y: index % 2 == 0 ? -50 : 50 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -89,10 +95,10 @@ export default function Home() {
                 key={index}
               >
                 <VerticalDisplayCard
-                  img_link={car.image_link}
+                  img_link={car.imageUrl}
                   car_title={car.title}
                   price={car.price}
-                  fuel_type={car.fuel}
+                  fuel_type={car.fuelType}
                   year={car.year}
                   condition={1}
                 />
