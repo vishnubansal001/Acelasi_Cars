@@ -185,6 +185,11 @@ class CarService {
     });
     return cars;
   }
+
+  async featuredCars() {
+    const cars = await Car.aggregate([{ $sort: { price: 1 } }, { $limit: 4 }]);
+    return cars;
+  }
 }
 
 export default CarService;
