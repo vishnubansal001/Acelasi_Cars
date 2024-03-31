@@ -4,6 +4,7 @@ import { cars } from '@/lib/constants'
 import HorizontalDisplayCard from '@/components/HorizontalDisplayCard'
 import FilterComponent from '@/components/FilterComponent'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
 
 function page() {
   return (
@@ -16,7 +17,9 @@ function page() {
         </div>
         {
             cars.map((car,idx)=>(
-                <HorizontalDisplayCard key={idx} fuel_type={car.fuel} img_link={car.image_link} condition={1} car_title={car.title} description={car.description} year={car.year} price={car.price}/>
+                <Link key={idx} href={`/car/${car.id}`}>
+                  <HorizontalDisplayCard key={idx} fuel_type={car.fuel} img_link={car.image_link} condition={1} car_title={car.title} description={car.description} year={car.year} price={car.price}/>
+                </Link>
             ))
         }
       </section>

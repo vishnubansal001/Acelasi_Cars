@@ -31,10 +31,12 @@ export default function Home() {
     <Navbar/>
     <section className="bg-gray-200 font-poppins min-h-screen flex flex-col justify-center items-center pt-16 md:pt=0">
       <div className="flex flex-col md:flex-row md:justify-between justify-center md:px-28 px-10 gap-20 lg:w-fit w-full">
-        <div className="md:text-3xl lg:text-6xl font-bold flex flex-col justify-center items-start gap-3">
-          <h1>Best <span className="text-red-600">Dealer</span> For</h1>
-          <h1>Your Four Wheeler</h1>
-          <Link href={"/search"} className="px-4 py-2 bg-blue-950 text-white text-sm rounded-full">Order Now</Link>
+        <div className="md:text-3xl lg:text-6xl text-nowrap font-bold flex flex-col justify-center items-start gap-3">
+          <h1 className="w-full text-center">Best <span className="text-red-600 font-playfair italic">Dealer</span> For</h1>
+          <h1 className="font-poppins w-full text-center">Your Four Wheeler</h1>
+          <div className="w-full text-center">
+            <Link href={"/search"} className="px-6 py-3 bg-blue-950 text-white text-sm rounded-full md:text-[16px]">Order Now</Link>
+          </div>
         </div>
         <motion.div initial={{x:1000}} animate={{x:0}}  transition={{duration: 0.4}} >
           <Image
@@ -69,7 +71,7 @@ export default function Home() {
         </div>
       </div>
     </section>
-    <section className="flex flex-col justify-center items-center py-10 bg-gray-200 gap-6">
+    <section className="flex flex-col justify-center items-center py-10 bg-gray-200 gap-6 bg-gradient-to-t from-gray-100 to-gray-200">
       <h1 className="w-full text-center font-poppins text-xl font-medium">Our Services</h1>
       <p className="w-full text-center text-gray-500 font-poppins mt-3">we Provide many of the best servises for you  and you will get the best benefits here </p>
       <div className="flex flex-row items-center justify-center gap-5 w-full py-3 md:px-28 flex-wrap px-10">

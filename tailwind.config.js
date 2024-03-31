@@ -54,6 +54,9 @@ module.exports = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        robotoSlab: ["Roboto Slab", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,5 +79,7 @@ module.exports = {
       },
     },
   },
+  
   plugins: [require("tailwindcss-animate")],
+  
 }

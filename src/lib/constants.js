@@ -1,6 +1,7 @@
 export const uniqueMakesArray = ["Toyota", "Honda", "Ford", "Chevrolet", "BMW"];
 export const cars=[
     {
+      id:1,
       "make": "Toyota",
       "model": "Camry",
       "image_link":"https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -19,6 +20,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/toyota_camry_2018"
     },
     {
+      id:2,
         "make": "Toyota",
         "model": "Camry",
         "image_link":"https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -37,6 +39,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/toyota_camry_2018"
       },
       {
+        id:3,
         "make": "Honda",
         "model": "Civic",
         "image_link":"https://images.unsplash.com/photo-1610768207795-72169abdf0d4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -55,6 +58,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/honda_civic_2017"
       },
       {
+        id:4,
         "make": "Ford",
         "model": "Mustang",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -73,6 +77,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/ford_mustang_2019"
       },
       {
+        id:5,
         "make": "Chevrolet",
         "model": "Camaro",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -91,6 +96,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/chevrolet_camaro_2016"
       },
       {
+        id:6,
         "make": "BMW",
         "model": "2 Series",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -109,6 +115,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/bmw_2series_2020"
       },
       {
+        id:7,
         "make": "Toyota",
         "model": "Rav4",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -127,6 +134,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/toyota_rav4_2015"
       },
       {
+        id:8,
         "make": "Honda",
         "model": "Fit",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -145,6 +153,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/honda_fit_2019"
       },
       {
+        id:9,
         "make": "Ford",
         "model": "Focus",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -163,6 +172,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/ford_focus_2017"
       },
       {
+        id:10,
         "make": "Chevrolet",
         "model": "Cruze",
         "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -181,6 +191,7 @@ export const cars=[
         "carfax_report_link": "https://example.com/carfax_report/chevrolet_cruze_2018"
       },
     {
+      id:11,
       "make": "Honda",
       "model": "Civic",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -199,6 +210,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/honda_civic_2017"
     },
     {
+      id:12,
       "make": "Ford",
       "model": "F-150",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -217,6 +229,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/ford_f150_2019"
     },
     {
+      id:13,
       "make": "Chevrolet",
       "model": "Malibu",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -235,6 +248,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/chevrolet_malibu_2016"
     },
     {
+      id:14,
       "make": "BMW",
       "model": "3 Series",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -253,6 +267,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/bmw_3series_2020"
     },
     {
+      id:15,
       "make": "Toyota",
       "model": "Rav4",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -271,6 +286,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/toyota_rav4_2015"
     },
     {
+      id:16,
       "make": "Honda",
       "model": "Accord",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -289,6 +305,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/honda_accord_2019"
     },
     {
+      id:17,
       "make": "Ford",
       "model": "Escape",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -307,6 +324,7 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/ford_escape_2017"
     },
     {
+      id:18,
       "make": "Chevrolet",
       "model": "Silverado 1500",
       "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -325,4 +343,4 @@ export const cars=[
       "carfax_report_link": "https://example.com/carfax_report/chevrolet_silverado1500_2018"
     },
 ]
-
+      
