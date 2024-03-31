@@ -61,7 +61,7 @@ export default function AddCar() {
 
   return (
     <>
-    <h1 className="text-2xl font-semibold my-4 pl-6">Send Your <span className='text-red-600 font-poppins italic'>Car Details</span> For Listing</h1>
+    <h1 className="text-2xl font-semibold mt-4 pl-8">Add a <span className='text-red-600 font-poppins italic'>New</span> Car</h1>
     <form className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md">
       <div className="mb-4">
         <label htmlFor="title" className="block mb-1 font-semibold">
@@ -376,7 +376,7 @@ export default function AddCar() {
           type="submit"
           className="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
-          Send Request
+          Add Car
         </button>
       </div>
     </form>

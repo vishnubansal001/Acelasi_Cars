@@ -15,7 +15,22 @@ import {
 import { formatPrice, formatDistance } from "@/lib/utils";
 
 export default function Page({ params }) {
-  const [car, setCar] = useState({});
+  const [car, setCar] = useState({
+    image_link: "",
+    title: "",
+    description: "",
+    price: 0,
+    transmission: "",
+    mileage: 0,
+    fuel: "",
+    carfax_report_link: "",
+    make: "",
+    model: "",
+    year: "",
+    drive_train: "",
+    body_type: "",
+    color: "",
+  });
   const [message, setMessage] = useState(
     "I am interested in this car. Please contact me with more details."
   );
@@ -29,14 +44,17 @@ export default function Page({ params }) {
   //     fetchCar()
   // },[])
   useEffect(() => {
-    console.log(params.id);
-    const car = cars.find((car) => car.id == parseInt(params.id));
-    setCar((c) => car);
-    setMessage(
-      (m) =>
-        `I am interested in this ${car.make} ${car.model}. Please contact me with more details.`
-    );
-    console.log(car);
+      console.log(params.id);
+      const car = cars.find((car) => car.id == parseInt(params.id));
+      if (!car) {
+        throw new Error("Car not found");
+      }
+      setCar((c) => car);
+      setMessage(
+        (m) =>
+          `I am interested in this car. Please contact me with more details.`
+      );
+      console.log(car);
   }, [params.id]);
 
   return (
