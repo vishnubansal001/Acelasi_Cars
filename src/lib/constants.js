@@ -1,7 +1,7 @@
 export const uniqueMakesArray = ["Toyota", "Honda", "Ford", "Chevrolet", "BMW"];
-<<<<<<< HEAD
 export const cars = [
   {
+    id: 1,
     make: "Toyota",
     model: "Camry",
     image_link:
@@ -22,6 +22,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/toyota_camry_2018",
   },
   {
+    id: 2,
     make: "Toyota",
     model: "Camry",
     image_link:
@@ -42,6 +43,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/toyota_camry_2018",
   },
   {
+    id: 3,
     make: "Honda",
     model: "Civic",
     image_link:
@@ -62,6 +64,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/honda_civic_2017",
   },
   {
+    id: 4,
     make: "Ford",
     model: "Mustang",
     image_link:
@@ -82,6 +85,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/ford_mustang_2019",
   },
   {
+    id: 5,
     make: "Chevrolet",
     model: "Camaro",
     image_link:
@@ -103,6 +107,7 @@ export const cars = [
       "https://example.com/carfax_report/chevrolet_camaro_2016",
   },
   {
+    id: 6,
     make: "BMW",
     model: "2 Series",
     image_link:
@@ -123,6 +128,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/bmw_2series_2020",
   },
   {
+    id: 7,
     make: "Toyota",
     model: "Rav4",
     image_link:
@@ -143,6 +149,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/toyota_rav4_2015",
   },
   {
+    id: 8,
     make: "Honda",
     model: "Fit",
     image_link:
@@ -163,6 +170,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/honda_fit_2019",
   },
   {
+    id: 9,
     make: "Ford",
     model: "Focus",
     image_link:
@@ -183,6 +191,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/ford_focus_2017",
   },
   {
+    id: 10,
     make: "Chevrolet",
     model: "Cruze",
     image_link:
@@ -204,6 +213,7 @@ export const cars = [
       "https://example.com/carfax_report/chevrolet_cruze_2018",
   },
   {
+    id: 11,
     make: "Honda",
     model: "Civic",
     image_link:
@@ -224,6 +234,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/honda_civic_2017",
   },
   {
+    id: 12,
     make: "Ford",
     model: "F-150",
     image_link:
@@ -244,6 +255,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/ford_f150_2019",
   },
   {
+    id: 13,
     make: "Chevrolet",
     model: "Malibu",
     image_link:
@@ -265,6 +277,7 @@ export const cars = [
       "https://example.com/carfax_report/chevrolet_malibu_2016",
   },
   {
+    id: 14,
     make: "BMW",
     model: "3 Series",
     image_link:
@@ -285,6 +298,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/bmw_3series_2020",
   },
   {
+    id: 15,
     make: "Toyota",
     model: "Rav4",
     image_link:
@@ -305,6 +319,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/toyota_rav4_2015",
   },
   {
+    id: 16,
     make: "Honda",
     model: "Accord",
     image_link:
@@ -325,6 +340,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/honda_accord_2019",
   },
   {
+    id: 17,
     make: "Ford",
     model: "Escape",
     image_link:
@@ -345,6 +361,7 @@ export const cars = [
     carfax_report_link: "https://example.com/carfax_report/ford_escape_2017",
   },
   {
+    id: 18,
     make: "Chevrolet",
     model: "Silverado 1500",
     image_link:
@@ -366,350 +383,3 @@ export const cars = [
       "https://example.com/carfax_report/chevrolet_silverado1500_2018",
   },
 ];
-=======
-export const cars=[
-    {
-      id:1,
-      "make": "Toyota",
-      "model": "Camry",
-      "image_link":"https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2018 Toyota Camry LE",
-      "description": "Well-maintained Toyota Camry LE with low mileage. Great fuel efficiency and comfortable interior.",
-      "year": 2018,
-      "price": 18000,
-      "location": "Los Angeles",
-      "postal_code": "90001",
-      "mileage": 30000,
-      "body_type": "Sedan",
-      "fuel": "Gasoline",
-      "color": "Silver",
-      "drive_train": "FWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/toyota_camry_2018"
-    },
-    {
-      id:2,
-        "make": "Toyota",
-        "model": "Camry",
-        "image_link":"https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2018 Toyota Camry LE",
-        "description": "Well-maintained Toyota Camry LE with low mileage. Great fuel efficiency and comfortable interior.",
-        "year": 2018,
-        "price": 18000,
-        "location": "Los Angeles",
-        "postal_code": "90001",
-        "mileage": 30000,
-        "body_type": "Sedan",
-        "fuel": "Gasoline",
-        "color": "Silver",
-        "drive_train": "FWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/toyota_camry_2018"
-      },
-      {
-        id:3,
-        "make": "Honda",
-        "model": "Civic",
-        "image_link":"https://images.unsplash.com/photo-1610768207795-72169abdf0d4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2017 Honda Civic LX",
-        "description": "Reliable Honda Civic LX in excellent condition. Perfect for city driving.",
-        "year": 2017,
-        "price": 15000,
-        "location": "New York",
-        "postal_code": "10001",
-        "mileage": 25000,
-        "body_type": "Sedan",
-        "fuel": "Gasoline",
-        "color": "Blue",
-        "drive_train": "FWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/honda_civic_2017"
-      },
-      {
-        id:4,
-        "make": "Ford",
-        "model": "Mustang",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2019 Ford Mustang GT",
-        "description": "Powerful Ford Mustang GT with sleek design and thrilling performance.",
-        "year": 2019,
-        "price": 32000,
-        "location": "Chicago",
-        "postal_code": "60601",
-        "mileage": 20000,
-        "body_type": "Coupe",
-        "fuel": "Gasoline",
-        "color": "Red",
-        "drive_train": "RWD",
-        "transmission": "Manual",
-        "carfax_report_link": "https://example.com/carfax_report/ford_mustang_2019"
-      },
-      {
-        id:5,
-        "make": "Chevrolet",
-        "model": "Camaro",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2016 Chevrolet Camaro SS",
-        "description": "Chevrolet Camaro SS with powerful V8 engine and sporty handling.",
-        "year": 2016,
-        "price": 28000,
-        "location": "Houston",
-        "postal_code": "77001",
-        "mileage": 35000,
-        "body_type": "Coupe",
-        "fuel": "Gasoline",
-        "color": "Black",
-        "drive_train": "RWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/chevrolet_camaro_2016"
-      },
-      {
-        id:6,
-        "make": "BMW",
-        "model": "2 Series",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2020 BMW 2 Series 230i",
-        "description": "Luxurious BMW 2 Series 230i with elegant design and agile handling.",
-        "year": 2020,
-        "price": 35000,
-        "location": "Miami",
-        "postal_code": "33101",
-        "mileage": 20000,
-        "body_type": "Coupe",
-        "fuel": "Gasoline",
-        "color": "White",
-        "drive_train": "RWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/bmw_2series_2020"
-      },
-      {
-        id:7,
-        "make": "Toyota",
-        "model": "Rav4",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2015 Toyota Rav4 XLE",
-        "description": "Toyota Rav4 XLE in excellent condition. Spacious interior and smooth ride.",
-        "year": 2015,
-        "price": 17000,
-        "location": "Dallas",
-        "postal_code": "75201",
-        "mileage": 45000,
-        "body_type": "SUV",
-        "fuel": "Gasoline",
-        "color": "Gray",
-        "drive_train": "AWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/toyota_rav4_2015"
-      },
-      {
-        id:8,
-        "make": "Honda",
-        "model": "Fit",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2019 Honda Fit Sport",
-        "description": "Sporty Honda Fit Sport with compact size and versatile interior.",
-        "year": 2019,
-        "price": 15000,
-        "location": "Phoenix",
-        "postal_code": "85001",
-        "mileage": 20000,
-        "body_type": "Hatchback",
-        "fuel": "Gasoline",
-        "color": "Blue",
-        "drive_train": "FWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/honda_fit_2019"
-      },
-      {
-        id:9,
-        "make": "Ford",
-        "model": "Focus",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2017 Ford Focus SE",
-        "description": "Ford Focus SE with agile handling and spacious interior. Perfect for city driving.",
-        "year": 2017,
-        "price": 14000,
-        "location": "Atlanta",
-        "postal_code": "30301",
-        "mileage": 30000,
-        "body_type": "Hatchback",
-        "fuel": "Gasoline",
-        "color": "Silver",
-        "drive_train": "FWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/ford_focus_2017"
-      },
-      {
-        id:10,
-        "make": "Chevrolet",
-        "model": "Cruze",
-        "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "2018 Chevrolet Cruze LT",
-        "description": "Chevrolet Cruze LT with modern features and fuel-efficient engine. Ideal for daily commuting.",
-        "year": 2018,
-        "price": 16000,
-        "location": "Denver",
-        "postal_code": "80201",
-        "mileage": 25000,
-        "body_type": "Sedan",
-        "fuel": "Gasoline",
-        "color": "White",
-        "drive_train": "FWD",
-        "transmission": "Automatic",
-        "carfax_report_link": "https://example.com/carfax_report/chevrolet_cruze_2018"
-      },
-    {
-      id:11,
-      "make": "Honda",
-      "model": "Civic",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2017 Honda Civic LX",
-      "description": "Reliable Honda Civic LX in excellent condition. Perfect for city driving.",
-      "year": 2017,
-      "price": 15000,
-      "location": "New York",
-      "postal_code": "10001",
-      "mileage": 25000,
-      "body_type": "Sedan",
-      "fuel": "Gasoline",
-      "color": "Blue",
-      "drive_train": "FWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/honda_civic_2017"
-    },
-    {
-      id:12,
-      "make": "Ford",
-      "model": "F-150",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2019 Ford F-150 XLT",
-      "description": "Powerful Ford F-150 XLT with spacious cabin. Ideal for both work and everyday use.",
-      "year": 2019,
-      "price": 28000,
-      "location": "Chicago",
-      "postal_code": "60601",
-      "mileage": 40000,
-      "body_type": "Truck",
-      "fuel": "Gasoline",
-      "color": "Red",
-      "drive_train": "4WD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/ford_f150_2019"
-    },
-    {
-      id:13,
-      "make": "Chevrolet",
-      "model": "Malibu",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2016 Chevrolet Malibu LT",
-      "description": "Comfortable Chevrolet Malibu LT with advanced safety features. Perfect for family trips.",
-      "year": 2016,
-      "price": 14000,
-      "location": "Houston",
-      "postal_code": "77001",
-      "mileage": 35000,
-      "body_type": "Sedan",
-      "fuel": "Gasoline",
-      "color": "White",
-      "drive_train": "FWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/chevrolet_malibu_2016"
-    },
-    {
-      id:14,
-      "make": "BMW",
-      "model": "3 Series",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2020 BMW 3 Series 330i",
-      "description": "Luxurious BMW 3 Series 330i with cutting-edge technology. A joy to drive.",
-      "year": 2020,
-      "price": 35000,
-      "location": "Miami",
-      "postal_code": "33101",
-      "mileage": 20000,
-      "body_type": "Sedan",
-      "fuel": "Gasoline",
-      "color": "Black",
-      "drive_train": "RWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/bmw_3series_2020"
-    },
-    {
-      id:15,
-      "make": "Toyota",
-      "model": "Rav4",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2015 Toyota Rav4 XLE",
-      "description": "Toyota Rav4 XLE in excellent condition. Spacious interior and smooth ride.",
-      "year": 2015,
-      "price": 17000,
-      "location": "Dallas",
-      "postal_code": "75201",
-      "mileage": 45000,
-      "body_type": "SUV",
-      "fuel": "Gasoline",
-      "color": "Gray",
-      "drive_train": "AWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/toyota_rav4_2015"
-    },
-    {
-      id:16,
-      "make": "Honda",
-      "model": "Accord",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2019 Honda Accord Sport",
-      "description": "Sporty Honda Accord Sport with sleek design and agile handling.",
-      "year": 2019,
-      "price": 22000,
-      "location": "Phoenix",
-      "postal_code": "85001",
-      "mileage": 28000,
-      "body_type": "Sedan",
-      "fuel": "Gasoline",
-      "color": "White",
-      "drive_train": "FWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/honda_accord_2019"
-    },
-    {
-      id:17,
-      "make": "Ford",
-      "model": "Escape",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2017 Ford Escape SE",
-      "description": "Ford Escape SE with comfortable interior and great fuel economy. Perfect for commuting.",
-      "year": 2017,
-      "price": 16000,
-      "location": "Atlanta",
-      "postal_code": "30301",
-      "mileage": 32000,
-      "body_type": "SUV",
-      "fuel": "Gasoline",
-      "color": "Silver",
-      "drive_train": "FWD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/ford_escape_2017"
-    },
-    {
-      id:18,
-      "make": "Chevrolet",
-      "model": "Silverado 1500",
-      "image_link":"https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "title": "2018 Chevrolet Silverado 1500 LT",
-      "description": "Chevrolet Silverado 1500 LT with powerful engine and spacious cabin. Ready for any task.",
-      "year": 2018,
-      "price": 30000,
-      "location": "Denver",
-      "postal_code": "80201",
-      "mileage": 40000,
-      "body_type": "Truck",
-      "fuel": "Gasoline",
-      "color": "Black",
-      "drive_train": "4WD",
-      "transmission": "Automatic",
-      "carfax_report_link": "https://example.com/carfax_report/chevrolet_silverado1500_2018"
-    },
-]
-      
->>>>>>> 2619d014acfa7d0f2b9bce3fe2fb0974ef235e75
