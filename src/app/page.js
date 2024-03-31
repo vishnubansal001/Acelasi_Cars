@@ -91,7 +91,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: index % 2 == 0 ? -50 : 50 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.4 }}
                 key={index}
               >
                 <VerticalDisplayCard
@@ -101,6 +101,7 @@ export default function Home() {
                   fuel_type={car.fuelType}
                   year={car.year}
                   condition={1}
+                  carId={car._id}
                 />
               </motion.div>
             ))}

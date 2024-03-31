@@ -46,6 +46,6 @@ export default function Footer() {
       <p>Contact</p>
     </div>
 </section>
-<div className="w-full px-10 md:px-28 bg-black text-center text-white text-sm">&copy; Acelasi Cars 2024</div></>
+<div className="w-full px-10 md:px-28 bg-black text-center text-gray-400 font-playfair italic text-sm">&copy; Classics Only Cars 2024</div></>
   )
 }

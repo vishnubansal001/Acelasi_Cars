@@ -2,7 +2,7 @@ import React from 'react';
 import { Fuel } from 'lucide-react';
 const HorizontalDisplayCard = ({ img_link, car_title, price, year, fuel_type, condition, description }) => {
     return (
-        <div className="flex flex-col gap-3 sm:flex-row items-center bg-white rounded-lg font-poppins shadow-lg overflow-hidden border">
+        <div className="flex flex-col gap-3 sm:flex-row items-center bg-white rounded-lg font-poppins shadow-lg overflow-hidden hover:scale-[1.05] transition-all">
             <img src={img_link} alt={car_title} className="w-full sm:w-auto sm:h-40 object-cover" />
             <div className='flex flex-col w-full p-1'>
                 <h2 className="text-lg md:text-xl font-semibold">{car_title}</h2>

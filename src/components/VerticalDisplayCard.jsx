@@ -1,6 +1,7 @@
 import React from "react";
 import { Fuel, Trash } from "lucide-react";
 import axios from "axios";
+import Link from "next/link";
 
 const VerticalDisplayCard = ({
   img_link,
@@ -11,6 +12,7 @@ const VerticalDisplayCard = ({
   fuel_type,
   condition,
   access,
+  carId,
 }) => {
   const userId = localStorage.getItem("token");
   const handleClick = () => {
@@ -27,7 +29,7 @@ const VerticalDisplayCard = ({
   };
 
   return (
-    <div className="flex flex-col items-center rounded-lg overflow-hidden shadow-md w-full bg-white">
+    <Link href={`/car/${carId}`} className="hover:scale-105 transition-all flex flex-col items-center rounded-lg overflow-hidden shadow-md w-full bg-white">
       <img src={img_link} alt={car_title} className="w-full h-auto shadow-md" />
       <h2 className="md:text-xl font-bold mt-4 text-center md:text-[1rem]">
         {car_title}
@@ -54,7 +56,7 @@ const VerticalDisplayCard = ({
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
