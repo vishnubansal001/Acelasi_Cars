@@ -41,7 +41,6 @@ class CarService {
     bodyType,
     transmission,
     fuelType,
-    engineSize,
     description,
     driveTrain,
     engine,
@@ -64,7 +63,6 @@ class CarService {
       bodyType,
       transmission,
       fuelType,
-      engineSize,
       description,
       driveTrain,
       engine,
@@ -91,7 +89,6 @@ class CarService {
     bodyType,
     transmission,
     fuelType,
-    engineSize,
     description,
     driveTrain,
     engine,
@@ -114,7 +111,6 @@ class CarService {
       bodyType,
       transmission,
       fuelType,
-      engineSize,
       description,
       driveTrain,
       engine,
@@ -144,14 +140,13 @@ class CarService {
     bodyType,
     transmission,
     fuelType,
-    engineSize,
     description,
     driveTrain,
     engine,
     color,
     report,
   }) {
-    const data = `Make: ${make}\nModel: ${model}\nYear: ${year}\nPrice: ${price}\nTitle: ${title}\nLocation: ${location}\nPostal Code: ${postalCode}\nOwner Name: ${ownerName}\nOwner Email: ${ownerEmail}\nOwner Phone: ${ownerPhone}\nImage URL: ${imageUrl}\nMileage: ${mileage}\nBody Type: ${bodyType}\nTransmission: ${transmission}\nFuel Type: ${fuelType}\nEngine Size: ${engineSize}\nDescription: ${description}\nDrive Train: ${driveTrain}\nEngine: ${engine}\nColor: ${color}\nReport: ${report}`;
+    const data = `Make: ${make}\nModel: ${model}\nYear: ${year}\nPrice: ${price}\nTitle: ${title}\nLocation: ${location}\nPostal Code: ${postalCode}\nOwner Name: ${ownerName}\nOwner Email: ${ownerEmail}\nOwner Phone: ${ownerPhone}\nImage URL: ${imageUrl}\nMileage: ${mileage}\nBody Type: ${bodyType}\nTransmission: ${transmission}\nFuel Type: ${fuelType}\nDescription: ${description}\nDrive Train: ${driveTrain}\nEngine: ${engine}\nColor: ${color}\nReport: ${report}`;
     await sendMail({
       email: ownerEmail,
       subject: "Car Submission",
@@ -170,7 +165,6 @@ class CarService {
     bodyType,
     transmission,
     fuelType,
-    engineSize,
     driveTrain,
     engine,
     color,
@@ -184,12 +178,16 @@ class CarService {
       bodyType: bodyType,
       transmission: transmission,
       fuelType: fuelType,
-      engineSize: engineSize,
       driveTrain: driveTrain,
       engine: engine,
       color: color,
       price: { $gte: minPrice, $lte: maxPrice },
     });
+    return cars;
+  }
+
+  async featuredCars() {
+    const cars = await Car.aggregate([{ $sort: { price: 1 } }, { $limit: 4 }]);
     return cars;
   }
 }

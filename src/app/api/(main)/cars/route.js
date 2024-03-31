@@ -34,7 +34,6 @@ export const POST = async (req) => {
       !car.bodyType ||
       !car.transmission ||
       !car.fuelType ||
-      !car.engineSize ||
       !car.description ||
       !car.driveTrain ||
       !car.engine ||

@@ -9,17 +9,17 @@ class UserService {
     return user;
   }
 
-  async #getUserByEmail(email) {
+  async getUserByEmail(email) {
     const user = await User.findOne({ email });
     if (!user) {
-      throw new Error("User not found");
+      return null;
     }
     return user;
   }
 
   async loginUser({ email, password }) {
-    const user = await this.#getUserByEmail(email);
-    if (user.password !== password) {
+    const user = await this.getUserByEmail(email);
+    if (!user || user.password !== password) {
       throw new Error("Invalid password");
     }
     return user;
