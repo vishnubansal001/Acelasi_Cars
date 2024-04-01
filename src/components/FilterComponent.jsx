@@ -45,7 +45,6 @@ function FilterComponent() {
   };
   const onApplyFilters = () => {
     console.log(formState);
-    // generateQueryParams(formState);
     router.push(`/search?${generateQueryParams(formState)}`);
   };
   const onFormChange = (e) => {

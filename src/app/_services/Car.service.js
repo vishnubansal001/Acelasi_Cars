@@ -163,36 +163,27 @@ class CarService {
   }
 
   async searchCars({
-    make,
-    model,
     minYear,
     maxYear,
     minPrice,
     maxPrice,
-    postalCode,
     minMileage,
     maxMileage,
-    bodyType,
-    transmission,
-    fuelType,
-    driveTrain,
-    engine,
-    color,
+    ...car
   }) {
     const cars = await Car.find({
-      make: make,
-      model: model,
-      year: { $gte: minYear, $lte: maxYear },
-      postalCode: postalCode,
-      mileage: { $gte: minMileage, $lte: maxMileage },
-      bodyType: bodyType,
-      transmission: transmission,
-      fuelType: fuelType,
-      driveTrain: driveTrain,
-      engine: engine,
-      color: color,
-      price: { $gte: minPrice, $lte: maxPrice },
+      ...car,
+      year: { $gte: minYear ? minYear : 0, $lte: maxYear ? maxYear : 10000 },
+      price: {
+        $gte: minPrice ? minPrice : 0,
+        $lte: maxPrice ? maxPrice : 1e18,
+      },
+      mileage: {
+        $gte: minMileage ? minMileage : 0,
+        $lte: maxMileage ? maxMileage : 1e9,
+      },
     });
+    // console.log(cars);
     return cars;
   }
 

@@ -1,32 +1,28 @@
-"use client"
+"use client";
+
 import Navbar from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
-// import { cars } from "@/lib/constants";
 import HorizontalDisplayCard from "@/components/HorizontalDisplayCard";
 import FilterComponent from "@/components/FilterComponent";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import axios from "axios";
 
-function page({searchParams}) {
-  const [filters,setFilters]=useState(searchParams);
-  const [cars,setCars]=useState([]);
+function Page({ searchParams }) {
+  const [filters, setFilters] = useState(searchParams);
+  const [cars, setCars] = useState([]);
+  useEffect(() => {
+    console.log(s);
+    console.log(filters);
+    axios
+      .post("/api/serach-cars", filters)
+      .then((res) => {
+        console.log(filters);
+        setCars(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [filters,searchParams]);
 
-  useEffect(()=>{
-    console.log(filters)
-    axios.post("/api/serach-cars",filters)
-    .then(
-      (res)=>{
-        setCars(res.data)
-        console.log(res.data)
-      }
-    )
-    .catch(
-      (err)=>console.log(err)
-    );
-  }
-  ,[]);
-  
   return (
     <div className="bg-gray-100">
       <Navbar />
@@ -57,4 +53,4 @@ function page({searchParams}) {
   );
 }
 
-export default page;
+export default Page;
