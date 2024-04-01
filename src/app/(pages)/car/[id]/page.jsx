@@ -35,14 +35,7 @@ export default function Page({ params }) {
     "I am interested in this car. Please contact me with more details."
   );
   const [open, setOpen] = useState(false);
-  // useEffect(()=>{
-  //     const fetchCar = async () => {
-  //         const res = await fetch(`/api/cars/${params.id}`)
-  //         const data = await res.json()
-  //         setCar(data)
-  //     }
-  //     fetchCar()
-  // },[])
+  
   useEffect(() => {
       console.log(params.id);
       const car = cars.find((car) => car.id == parseInt(params.id));
