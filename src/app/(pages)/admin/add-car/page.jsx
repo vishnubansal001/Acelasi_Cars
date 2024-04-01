@@ -61,8 +61,8 @@ export default function AddCar() {
 
   return (
     <>
-    <h1 className="text-2xl font-semibold mt-4 pl-8">Add a <span className='text-red-600 font-poppins italic'>New</span> Car</h1>
     <form className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md">
+    <h1 className="text-2xl font-semibold mt-4 w-full text-center">Add a <span className='text-red-600 font-poppins italic'>New</span> Car</h1>
       <div className="mb-4">
         <label htmlFor="title" className="block mb-1 font-semibold">
           Title:
