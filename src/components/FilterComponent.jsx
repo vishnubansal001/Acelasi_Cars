@@ -276,6 +276,7 @@ function FilterComponent() {
             </div>
           </form>
           <div className="flex flex-row justify-center items-center gap-6 ">
+            <DrawerClose>
             <Button
               variant="default"
               onClick={() => {
@@ -284,7 +285,6 @@ function FilterComponent() {
             >
               Apply Filters
             </Button>
-            <DrawerClose>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>
           </div>
