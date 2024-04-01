@@ -26,6 +26,11 @@ class CarService {
     return models;
   }
 
+  async getModelByMake(make) {
+    const models = await Car.find({ make }).distinct("model");
+    return models;
+  }
+
   async createCar({
     make,
     model,
