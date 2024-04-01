@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import {
     Drawer,
@@ -13,29 +13,43 @@ import {
     DrawerTrigger,
   } from "@/components/ui/drawer"
 import { Button } from "./ui/button"
-import { uniqueMakesArray,cars } from "@/lib/constants"
 import { Filter } from "lucide-react"
+import axios from "axios"
   
 
-function FilterComponent() {
-    const [filteredModels, setFilteredModels] = useState([...new Set(cars.map(car => car.model))]);
-    function filterModelsByMake(selectedMake) {
-        const filteredModels = [... new Set(cars
-          .filter(car => car.make === selectedMake)
-          .map(car => car.model))]
-      
-        return filteredModels;
-      }
-      
-      // Example onchange event handler for <select>
-      function onMakeSelectChange(event) {
-        const selectedMake = event.target.value;
-        if(selectedMake === "any") return setFilteredModels([...new Set(cars.map(car => car.model))]);
-        const filteredModels = filterModelsByMake(selectedMake);
-      
-        // Assuming you have a <select> element for models with id "modelSelect"
-        setFilteredModels(filteredModels);
-      }
+function FilterComponent({filters, setFilters}) {
+    const [uniqueMakes, setUniqueMakes] = useState([]);
+    const [filteredModels, setFilteredModels] = useState([]);
+    const [formState, setFormState] = useState({});
+    useEffect(()=>{
+        axios.get("/api/make").then(
+            (res)=>{
+                setUniqueMakes(res.data)
+            }
+        ).catch(
+            (err)=>{
+                console.log(err)
+            }
+        )
+    },[])
+    const onMakeSelectChange = (e)=>{
+        axios.post("/api/models",{make:e.target.value}).then(
+            (res)=>{
+                setFilteredModels(res.data)
+            }
+        ).catch(
+            (err)=>{
+                console.log(err)
+            }
+        )
+    }
+    const onApplyFilters = ()=>{
+        console.log(formState);
+        setFilters(formState);
+    }
+    const onFormChange = (e)=>{
+        setFormState({...formState,[e.target.name]:e.target.value})
+    }
 
   return (
     <Drawer>
@@ -54,17 +68,20 @@ function FilterComponent() {
                     <div className="flex flex-row w-full gap-6">
                         <div className="flex flex-col w-full">
                             <label htmlFor="make">Make</label>
-                            <select name="Make" id="make" className="h-10 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onMakeSelectChange}>
-                                <option value="any">--any--</option>
-                                {uniqueMakesArray.map((make,index)=>
+                            <select name="Make" id="make" className="h-10 w-full rounded-md border-2 border-gray-200 border-solid" onChange={()=>{
+                                    onMakeSelectChange();
+                                    onFormChange();
+                                }}>
+                                <option value={null}>--any--</option>
+                                {uniqueMakes.map((make,index)=>
                                     <option key={index} value={make}>{make}</option>
                                     )}
                             </select>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="model">Model</label>
-                            <select name="model" id="model" className="h-10 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="model" id="model" className="h-10 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 {filteredModels.map((model,index)=>
                                     <option key={index} value={model}>{model}</option>
                                     )}
@@ -74,34 +91,34 @@ function FilterComponent() {
                     <div className="flex flex-row w-full gap-6">
                         <div className="flex flex-col w-full">
                             <label htmlFor="minPrice">Minimum Price</label>
-                            <input type="number" id="minPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="minPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={0} onChange={onFormChange}/>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="maxPrice">Maximum Price</label>
-                            <input type="number" id="maxPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="maxPrice" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={999999999999} onChange={onFormChange}/>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="minYear">Minimum Year</label>
-                            <input type="number" id="minYear" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="minYear" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={0} onChange={onFormChange}/>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="maxYear">Maximum Year</label>
-                            <input type="number" id="maxYear" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="maxYear" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={9999} onChange={onFormChange}/>
                         </div>
                     </div>
                     <div className="flex flex-row w-full gap-2 sm:gap-6">
                         <div className="flex flex-col w-full">
                             <label htmlFor="minMileage">Minimum Mileage</label>
-                            <input type="number" id="minMileage" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="minMileage" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={0} onChange={onFormChange}/>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="maxMilage">Maximum Milage</label>
-                            <input type="number" id="maxMilage" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"/>
+                            <input type="number" id="maxMilage" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" defaultValue={999999999} onChange={onFormChange}/>
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="bodyType">Body Type</label>
-                            <select name="bodyType" id="bodyType" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="bodyType" id="bodyType" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="Sedan">Sedan</option>
                                 <option value="Coupe">Coupe</option>
                                 <option value="SUV">SUV</option>
@@ -115,8 +132,8 @@ function FilterComponent() {
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="color">Color</label>
-                            <select name="color" id="color" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="color" id="color" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="Black">Black</option>
                                 <option value="White">White</option>
                                 <option value="Red">Red</option>
@@ -135,8 +152,8 @@ function FilterComponent() {
                     <div className="flex flex-col sm:flex-row w-full gap-2 sm:gap-6 mb-6">
                         <div className="flex flex-col w-full">
                             <label htmlFor="engine">Engine</label>
-                            <select name="engine" id="engine" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="engine" id="engine" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="V4">V4</option>
                                 <option value="V6">V6</option>
                                 <option value="V8">V8</option>
@@ -146,8 +163,8 @@ function FilterComponent() {
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="fuelType">Fuel Type</label>
-                            <select name="fuelType" id="fuelType" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="fuelType" id="fuelType" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="Petrol">Gasoline</option>
                                 <option value="Diesel">Diesel</option>
                                 <option value="Electric">Electric</option>
@@ -157,8 +174,8 @@ function FilterComponent() {
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="driveTrain">Drive Train</label>
-                            <select name="driveTrain" id="driveTrain" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="driveTrain" id="driveTrain" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="FWD">FWD</option>
                                 <option value="RWD">RWD</option>
                                 <option value="AWD">AWD</option>
@@ -168,8 +185,8 @@ function FilterComponent() {
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="transmission">Transmission</label>
-                            <select name="transmission" id="transmission" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid">
-                                <option value="any">--any--</option>
+                            <select name="transmission" id="transmission" className="h-8 w-full rounded-md border-2 border-gray-200 border-solid" onChange={onFormChange}>
+                                <option value={null}>--any--</option>
                                 <option value="Automatic">Automatic</option>
                                 <option value="Manual">Manual</option>
                                 <option value="Other">Other</option>
@@ -179,7 +196,7 @@ function FilterComponent() {
                     
                 </form>
                 <div className="flex flex-row justify-center items-center gap-6 ">
-                    <Button variant='default' onClick={()=>{alert("filters applied")}}>Apply Filters</Button>
+                    <Button variant='default' onClick={()=>{onApplyFilters}}>Apply Filters</Button>
                     <DrawerClose>
                         <Button variant='outline'>Cancel</Button>
                     </DrawerClose>

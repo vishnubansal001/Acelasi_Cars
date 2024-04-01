@@ -1,12 +1,32 @@
+"use client"
 import Navbar from "@/components/Navbar";
-import React from "react";
-import { cars } from "@/lib/constants";
+import React, { useEffect, useState } from "react";
+// import { cars } from "@/lib/constants";
 import HorizontalDisplayCard from "@/components/HorizontalDisplayCard";
 import FilterComponent from "@/components/FilterComponent";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import axios from "axios";
 
-function page() {
+function page({searchParams}) {
+  const [filters,setFilters]=useState(searchParams);
+  const [cars,setCars]=useState([]);
+
+  useEffect(()=>{
+    console.log(filters)
+    axios.post("/api/serach-cars",filters)
+    .then(
+      (res)=>{
+        setCars(res.data)
+        console.log(res.data)
+      }
+    )
+    .catch(
+      (err)=>console.log(err)
+    );
+  }
+  ,[]);
+  
   return (
     <div className="bg-gray-100">
       <Navbar />
@@ -15,7 +35,7 @@ function page() {
           <p className="font-semibold text-sm sm:text-lg">
             Search Results : {cars.length}
           </p>
-          <FilterComponent />
+          <FilterComponent filters={filters} setFilters={setFilters} />
         </div>
         {cars.map((car, idx) => (
           <Link key={idx} href={`/car/${car.id}`}>
