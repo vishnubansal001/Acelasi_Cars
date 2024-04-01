@@ -89,7 +89,7 @@ export default function Page({ params }) {
                 <div>Year : {car?.year}</div>
                 <div>Transmission : {car?.transmission}</div>
                 <div>Mileage : {car?.mileage}</div>
-                <div>Fuel-Type : {car?.fuel}</div>
+                <div>Fuel-Type : {car?.fuelType}</div>
                 <div>Drive Train : {car?.driveTrain}</div>
                 <div>Body-Type : {car?.bodyType}</div>
                 <div>Color : {car?.color}</div>
