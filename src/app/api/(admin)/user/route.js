@@ -6,7 +6,7 @@ export const POST = async (req) => {
   try {
     await connectToDB();
     const user = await req.json();
-    if (!user || !user.email || !user.password || !user.name || !user.id) {
+    if (!user || !user.email || !user.password || !user.name || !user.role || !user.id) {
       return new NextResponse("Please fill all the fields", { status: 400 });
     }
     const u = await new UserService().getUserById(user.id);
@@ -22,7 +22,7 @@ export const POST = async (req) => {
       name: user.name,
       email: user.email,
       password: user.password,
-      role: "admin",
+      role: user.role,
     });
     return NextResponse.json({ id: userData._id });
   } catch (error) {

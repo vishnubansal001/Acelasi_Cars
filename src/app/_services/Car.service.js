@@ -1,3 +1,4 @@
+import cloudinary from "../_cloud/cloudinary";
 import Car from "../_models/car.model";
 import { sendMail } from "@/lib/sendMail";
 
@@ -36,7 +37,7 @@ class CarService {
     ownerName,
     ownerEmail,
     ownerPhone,
-    imageUrl,
+    image,
     mileage,
     bodyType,
     transmission,
@@ -47,6 +48,10 @@ class CarService {
     color,
     report,
   }) {
+    const imageRes = await cloudinary.uploader.upload(image, {
+      upload_preset: "events",
+    });
+    const imageUrl = imageRes.secure_url;
     const car = await Car.create({
       make,
       model,
@@ -84,7 +89,6 @@ class CarService {
     ownerName,
     ownerEmail,
     ownerPhone,
-    imageUrl,
     mileage,
     bodyType,
     transmission,
@@ -106,7 +110,6 @@ class CarService {
       ownerName,
       ownerEmail,
       ownerPhone,
-      imageUrl,
       mileage,
       bodyType,
       transmission,
@@ -135,7 +138,7 @@ class CarService {
     ownerName,
     ownerEmail,
     ownerPhone,
-    imageUrl,
+    image,
     mileage,
     bodyType,
     transmission,
@@ -146,7 +149,7 @@ class CarService {
     color,
     report,
   }) {
-    const data = `Make: ${make}\nModel: ${model}\nYear: ${year}\nPrice: ${price}\nTitle: ${title}\nLocation: ${location}\nPostal Code: ${postalCode}\nOwner Name: ${ownerName}\nOwner Email: ${ownerEmail}\nOwner Phone: ${ownerPhone}\nImage URL: ${imageUrl}\nMileage: ${mileage}\nBody Type: ${bodyType}\nTransmission: ${transmission}\nFuel Type: ${fuelType}\nDescription: ${description}\nDrive Train: ${driveTrain}\nEngine: ${engine}\nColor: ${color}\nReport: ${report}`;
+    const data = `Make: ${make}\nModel: ${model}\nYear: ${year}\nPrice: ${price}\nTitle: ${title}\nLocation: ${location}\nPostal Code: ${postalCode}\nOwner Name: ${ownerName}\nOwner Email: ${ownerEmail}\nOwner Phone: ${ownerPhone}\nImage URL: ${image}\nMileage: ${mileage}\nBody Type: ${bodyType}\nTransmission: ${transmission}\nFuel Type: ${fuelType}\nDescription: ${description}\nDrive Train: ${driveTrain}\nEngine: ${engine}\nColor: ${color}\nReport: ${report}`;
     await sendMail({
       email: ownerEmail,
       subject: "Car Submission",

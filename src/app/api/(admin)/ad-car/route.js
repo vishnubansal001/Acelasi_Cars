@@ -20,16 +20,16 @@ export const POST = async (req) => {
       !car.ownerName ||
       !car.ownerEmail ||
       !car.ownerPhone ||
-      !car.imageUrl ||
       !car.mileage ||
       !car.bodyType ||
-      !car.transmission ||
-      !car.fuelType ||
-      !car.description ||
-      !car.driveTrain ||
       !car.engine ||
       !car.color ||
-      !car.report
+      !car.transmission ||
+      !car.driveTrain ||
+      !car.fuelType ||
+      !car.description ||
+      !car.report ||
+      !car.image 
     ) {
       console.log(car);
       return new NextResponse("Please fill all the fields", { status: 400 });
