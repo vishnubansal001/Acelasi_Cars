@@ -18,3 +18,20 @@ export function formatDistance(distance) {
   let formattedDistance = decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
   return formattedDistance;
 }
+
+export function generateQueryParams(obj) {
+  const params = [];
+  for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+          const value = obj[key];
+          if (Array.isArray(value)) {
+              value.forEach(item => {
+                  params.push(`${encodeURIComponent(key)}=${encodeURIComponent(item)}`);
+              });
+          } else {
+              params.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+          }
+      }
+  }
+  return params.join('&');
+}

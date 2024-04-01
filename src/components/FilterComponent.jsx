@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import {
   Drawer,
@@ -15,11 +16,13 @@ import {
 import { Button } from "./ui/button";
 import { Filter } from "lucide-react";
 import axios from "axios";
+import { generateQueryParams } from "@/lib/utils";
 
-function FilterComponent({ filters, setFilters }) {
+function FilterComponent() {
   const [uniqueMakes, setUniqueMakes] = useState([]);
   const [filteredModels, setFilteredModels] = useState([]);
   const [formState, setFormState] = useState({});
+  const router=useRouter();
   useEffect(() => {
     axios
       .get("/api/make")
@@ -42,7 +45,8 @@ function FilterComponent({ filters, setFilters }) {
   };
   const onApplyFilters = () => {
     console.log(formState);
-    
+    // generateQueryParams(formState);
+    router.push(`/search?${generateQueryParams(formState)}`);
   };
   const onFormChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -66,7 +70,7 @@ function FilterComponent({ filters, setFilters }) {
               <div className="flex flex-col w-full">
                 <label htmlFor="make">Make</label>
                 <select
-                  name="Make"
+                  name="make"
                   id="make"
                   className="h-10 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={(e) => {
@@ -104,6 +108,7 @@ function FilterComponent({ filters, setFilters }) {
                 <label htmlFor="minPrice">Minimum Price</label>
                 <input
                   type="number"
+                  name="minPrice"
                   id="minPrice"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
@@ -114,6 +119,7 @@ function FilterComponent({ filters, setFilters }) {
                 <input
                   type="number"
                   id="maxPrice"
+                  name="maxPrice"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
                 />
@@ -123,6 +129,7 @@ function FilterComponent({ filters, setFilters }) {
                 <input
                   type="number"
                   id="minYear"
+                  name="minYear"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
                 />
@@ -132,6 +139,7 @@ function FilterComponent({ filters, setFilters }) {
                 <input
                   type="number"
                   id="maxYear"
+                  name="maxYear"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
                 />
@@ -143,6 +151,7 @@ function FilterComponent({ filters, setFilters }) {
                 <input
                   type="number"
                   id="minMileage"
+                  name="minMileage"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
                 />
@@ -152,6 +161,7 @@ function FilterComponent({ filters, setFilters }) {
                 <input
                   type="number"
                   id="maxMilage"
+                  name="maxMilage"
                   className="h-8 w-full rounded-md border-2 border-gray-200 border-solid"
                   onChange={onFormChange}
                 />
