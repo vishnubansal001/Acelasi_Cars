@@ -25,9 +25,9 @@ function Page({ searchParams }) {
   }, [filters,searchParams]);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100">
       <Navbar />
-      <section className="flex flex-col gap-4 md:px-28 px-10 md:pt-16 pb-5">
+      <section className="flex flex-col gap-4 md:px-28 px-10 md:pt-16 pb-5 min-h-screen">
         <div className="flex flex-row justify-between items-center py-2">
           <p className="font-semibold text-sm sm:text-lg">
             Search Results : {cars.length}
