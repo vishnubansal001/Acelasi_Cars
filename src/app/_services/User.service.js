@@ -1,10 +1,10 @@
 import User from "../_models/user.model.js";
 
 class UserService {
-  async #getUserById(id) {
+  async getUserById(id) {
     const user = await User.findById(id);
     if (!user) {
-      throw new Error("User not found");
+      return null;
     }
     return user;
   }
@@ -25,13 +25,13 @@ class UserService {
     return user;
   }
 
-  async registerUser({ email, password, name, role }) {
+  async registerUser({ email, password, name }) {
     const user = await User.create({ email, password, role, name });
     return user;
   }
 
   async checkAdmin(id) {
-    const user = await this.#getUserById(id);
+    const user = await this.getUserById(id);
     if (user.role !== "admin") {
       throw new Error("Unauthorized");
     }
@@ -43,7 +43,7 @@ class UserService {
   }
 
   async updateUser({ id, userId, name, email, password }) {
-    const user = await this.#getUserById(userId);
+    const user = await this.getUserById(userId);
     if (user.role !== "admin") {
       throw new Error("Unauthorized");
     }

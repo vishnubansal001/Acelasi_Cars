@@ -16,13 +16,12 @@ function Page() {
   };
 
   const handleSubmit = () => {
-    const userId = localStorage.getItem("token");
-    const response = axios.post("/api/user", { ...data, userId });
-    console.log(response);
+    const id = localStorage.getItem("token");
+    const response = axios.post("/api/user", { ...data, id });
     if (response.status === 200) {
       console.log("User Added Successfully");
     } else {
-      console.log("Failed to add user");
+      console.log("Failed to add user", response);
     }
   };
 

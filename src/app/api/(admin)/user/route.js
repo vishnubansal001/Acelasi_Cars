@@ -6,7 +6,8 @@ export const POST = async (req) => {
   try {
     await connectToDB();
     const user = await req.json();
-    if (!user || !user.email || !user.password || !user.name || !user.role || !user.id) {
+    if (!user || !user.email || !user.password || !user.name || !user.id) {
+      console.log(user);
       return new NextResponse("Please fill all the fields", { status: 400 });
     }
     const u = await new UserService().getUserById(user.id);
@@ -18,13 +19,15 @@ export const POST = async (req) => {
         status: 401,
       });
     }
-    const userData = await new UserService().registerUser({
-      name: user.name,
-      email: user.email,
-      password: user.password,
-      role: user.role,
-    });
-    return NextResponse.json({ id: userData._id });
+    try {
+      const userData = await new UserService().registerUser({
+        ...user,
+        role: "admin",
+      });
+      return NextResponse.json({ id: userData._id });
+    } catch (error) {
+      return new NextResponse(error.message, { status: 401 });
+    }
   } catch (error) {
     console.log(error);
     return new NextResponse("Internal Error", { status: 500 });
