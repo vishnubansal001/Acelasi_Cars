@@ -1,4 +1,5 @@
 "use client";
+
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -13,41 +14,18 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 import { formatPrice, formatDistance } from "@/lib/utils";
+import axios from "axios";
 
 export default function Page({ params }) {
-  const [car, setCar] = useState({
-    image_link: "",
-    title: "",
-    description: "",
-    price: 0,
-    transmission: "",
-    mileage: 0,
-    fuel: "",
-    carfax_report_link: "",
-    make: "",
-    model: "",
-    year: "",
-    drive_train: "",
-    body_type: "",
-    color: "",
-  });
-  const [message, setMessage] = useState(
-    "I am interested in this car. Please contact me with more details."
-  );
+  const [car, setCar] = useState();
   const [open, setOpen] = useState(false);
-  
   useEffect(() => {
-      console.log(params.id);
-      const car = cars.find((car) => car.id == parseInt(params.id));
-      if (!car) {
-        throw new Error("Car not found");
-      }
-      setCar((c) => car);
-      setMessage(
-        (m) =>
-          `I am interested in this car. Please contact me with more details.`
-      );
-      console.log(car);
+    const fetchCar = async () => {
+      const res = await axios.get(`/api/cars/${params.id}`);
+      const data = res.data;
+      setCar(data);
+    };
+    fetchCar();
   }, [params.id]);
 
   return (
@@ -56,40 +34,40 @@ export default function Page({ params }) {
       <section className="min-h-screen flex flex-col md:flex-row justify-between md:px-24 px-10 md:pt-28 pb-5 pt-10 w-full relative">
         <div className="flex flex-col gap-3 md:w-3/5 w-full pb-10">
           <Image
-            src={car.image_link}
-            alt={car.make + " " + car.model}
+            src={car?.imageUrl}
+            alt={car?.make + " " + car?.model}
             width={400}
             height={400}
             className="w-full h-auto bg-car"
             loading="lazy"
           />
           <h1 className="text-2xl font-poppins font-semibold text-gray-800">
-            {car.title}
+            {car?.title}
           </h1>
-          <p>{car.description}</p>
+          <p>{car?.description}</p>
           <h1 className="text-3xl italic font-playfair font-semibold text-green-700 w-full text-center">
-            $ {formatPrice(parseInt(car.price))}
+            $ {formatPrice(parseInt(car?.price))}
           </h1>
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="flex flex-row items-center justify-center">
-              {car.transmission === "Automatic" ? (
+              {car?.transmission === "Automatic" ? (
                 <TbAutomaticGearbox size={20} color="red" />
               ) : (
                 <TbManualGearbox size={20} color="red" />
               )}{" "}
-              : {car.transmission}
+              : {car?.transmission}
             </div>
             <div className="flex flex-row items-center justify-center">
               <Gauge size={20} color="red" /> :{" "}
-              {formatDistance(parseInt(car.mileage))} Km
+              {formatDistance(parseInt(car?.mileage))} Km
             </div>
             <div className="flex flex-row items-center justify-center">
-              <Fuel size={20} color="red" /> : {car.fuel}
+              <Fuel size={20} color="red" /> : {car?.fuelType}
             </div>
           </div>
           <h1>
             View Car History Report{" "}
-            <a href={car.carfax_report_link} className="text-red-600 underline">
+            <a href={car?.report} className="text-red-600 underline">
               Here
             </a>
           </h1>
@@ -106,15 +84,15 @@ export default function Page({ params }) {
             </CollapsibleTrigger>
             <CollapsibleContent>
               <div className="flex flex-col text-sm gap-1 py-4">
-                <div>Make : {car.make}</div>
-                <div>Model : {car.model}</div>
-                <div>Year : {car.year}</div>
-                <div>Transmission : {car.transmission}</div>
-                <div>Mileage : {car.mileage}</div>
-                <div>Fuel-Type : {car.fuel}</div>
-                <div>Drive Train : {car.drive_train}</div>
-                <div>Body-Type : {car.body_type}</div>
-                <div>Color : {car.color}</div>
+                <div>Make : {car?.make}</div>
+                <div>Model : {car?.model}</div>
+                <div>Year : {car?.year}</div>
+                <div>Transmission : {car?.transmission}</div>
+                <div>Mileage : {car?.mileage}</div>
+                <div>Fuel-Type : {car?.fuel}</div>
+                <div>Drive Train : {car?.driveTrain}</div>
+                <div>Body-Type : {car?.bodyType}</div>
+                <div>Color : {car?.color}</div>
               </div>
             </CollapsibleContent>
           </Collapsible>
@@ -159,7 +137,6 @@ export default function Page({ params }) {
               name="message"
               id="message"
               className="w-full rounded-md p-2 bg-gray-200 text-black"
-              defaultValue={message}
               required
             ></textarea>
           </div>
