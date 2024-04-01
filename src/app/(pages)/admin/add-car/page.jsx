@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
-import useRouter from "next/navigation"
+import { useRouter } from "next/navigation";
 
 export default function AddCar() {
   const [image, setImage] = useState(null);
@@ -48,7 +48,7 @@ export default function AddCar() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userId = localStorage.getItem("token");
-    const response = axios.post("/api/ad-car", { ...formState, image, userId});
+    const response = axios.post("/api/ad-car", { ...formState, image, userId });
     const data = (await response).data;
     if (data.error) {
       console.error(data.error);
