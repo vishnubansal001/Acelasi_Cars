@@ -18,7 +18,7 @@ import { Filter } from "lucide-react";
 import axios from "axios";
 import { generateQueryParams } from "@/lib/utils";
 
-function FilterComponent() {
+function FilterComponent({setFilters}) {
   const [uniqueMakes, setUniqueMakes] = useState([]);
   const [filteredModels, setFilteredModels] = useState([]);
   const [formState, setFormState] = useState({});
@@ -46,6 +46,8 @@ function FilterComponent() {
   const onApplyFilters = () => {
     console.log(formState);
     router.push(`/search?${generateQueryParams(formState)}`);
+    // setReset(a=>!a);
+    setFilters(formState)
   };
   const onFormChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
